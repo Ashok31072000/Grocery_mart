@@ -1,0 +1,92 @@
+{% extends "nav.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body style='background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");'>
+    <u><h2 style="text-align: center; color: darkblue;margin-top:180px;"><strong>REGISTER FOR GROCERY-MART HERE...</strong></h2></u>
+    <div class="container" style="border: 2px solid black;width: 550px;height: 1100px;align-self: center;background-color: #fff; border-radius: 20px;margin-top:80px;">
+        {{msg}}
+        <form onsubmit="return validateForm()" method="post">
+            {% csrf_token %}
+            <!-- your existing form fields -->
+            <label>Enter First name :</label><br>
+                <input type="text" class="form-control" name="fname" placeholder="last name" style="width: 500px;"><br>
+                <label>Enter Last name :</label><br>
+                <input type="text" class="form-control" name="lname" placeholder="last name" style="width: 500px;"><br>
+                <label><span class="glyphicon glyphicon-envelope"></span>Enter E-mail Address :</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="enter your mail" style="width: 500px;"><br>
+            <!-- Add password validation -->
+            <label><span class="glyphicon glyphicon-lock"></span>Enter Password :</label>
+            <input type="password" class="form-control" name="psw" placeholder="enter your password" style="width: 500px;"><br>
+
+
+            <!-- Add mobile number validation -->
+            <label><span class="glyphicon glyphicon-phone"></span>Enter Phone No :</label>
+            <input type="tel" class="form-control"  pattern="[789][0-9]{9}" maxlength="10" name="phonenum" id="phone" placeholder="enter your phone number" style="width: 500px;"><br>
+
+            <!-- Add date of birth validation -->
+            <label>Enter Date of birth :</label>
+            <input type="date" class="form-control" name="dob" id="dob" placeholder="DD/MM/YYYY." style="width: 500px;"><br>
+            <label><span class="glyphicon glyphicon-user"></span>Gender:</label>
+                <input type="radio" name="gender" value="male">male
+                <input type="radio" name="gender" value="female">female
+
+                <div class="from-group">
+                <h3>address :</h3>
+                <label for="house no">House number :</label>
+                <input type="text" class="form-control" name="h_no" id="house no" style="width: 500px;">
+                <label for="street">Street :</label>
+                <input type="text" class="form-control" name="street" id="street" style="width: 500px;">
+                <label for="area">Pincode :</label>
+                <input type="text" class="form-control" name="pincode" id="area" style="width: 500px;">
+                <label for="district">District :</label>
+                <input type="text" class="form-control" name="district" id="district" style="width: 500px;">
+                <label for="state">State :</label>
+                <input type="text" class="form-control" name="state" id="state" style="width: 500px;">
+                <label for="country">Country :</label>
+                <input type="text" class="form-control" name="country" id="country" style="width: 500px;">
+            </div><br>
+
+            <!-- your existing form fields -->
+
+            <div>
+                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
+        </form>
+        <h4>Existing user <a href="login">login here...</a></h4>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var phone = document.getElementById('phone').value;
+
+            // Password validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            // Mobile number pattern validation (10 digits)
+            var phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Invalid phone number! Please enter a 10-digit number.");
+                return false;
+            }
+
+            // Add other validations as needed
+
+            return true; // If all validations pass
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

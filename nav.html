@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery-mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
+    <link rel="icon" type="image/icon"href="static/cart.png">
+ </head>
+ <body>
+  <!-- header section -->
+  <header class="header">
+    <a href="" class='logo'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Grocery-mart</a>
+
+    <div class="icons">
+        <div class="fa fa-search" id="search-btn"></div>
+        <a href="login"><div class="fa fa-user" id="login-btn"></div></a>
+        <div class="fa fa-wechat" id="messenger-btn"></div>
+
+    </div>
+    <form class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fa fa-search"></label>
+    </form>
+
+
+    <form action="#" class="login-form1" id="form_id1" method="post" name="myform1">
+        <h3>Raise Query here...</h3><br><br><br><br><br><br><br><br><br><br><br>
+        <input type="text" placeholder="enter your query" class="box" id="username" name="username">
+
+        <input type="submit" value="Send Now" class="btn" id="submit" onclick="validate1()" style="margin-left: 20px;"/>
+    </form>
+
+
+  </header>
+
+
+
+<script src="static/js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</body>
+</html>
+{% block content %}
+{% endblock %}

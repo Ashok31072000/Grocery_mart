@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery-mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
+    <link rel="icon" type="image/icon"href="static/cart.png">
+ </head>
+ <body>
+  <!-- header section -->
+  <header class="header">
+    <a href="" class='logo'><i class="fa fa-shopping-basket" aria-hidden="true"></i>Grocery-mart</a>
+
+    <div class="icons">
+        <div class="fa fa-search" id="search-btn"></div>
+        <a href="login"><div class="fa fa-user" id="login-btn"></div></a>
+
+    </div>
+    <form class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fa fa-search"></label>
+    </form>
+  </header>
+
+  <!-- banner section -->
+  <section class="home" id="home">
+    <div class="content">
+        <h3>Fresh And <span>Organic</span> Products For You</h3>
+        <p>Get Organic products at your door step.
+            Order here and get instance discounts on
+            selected products.
+        </p>
+        <a href="#" class="btn">Shop now</a>
+    </div>
+  </section>
+    <!-- banner section -->
+ <!-- footer section -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Groco <i class="fa fa-shopping-basket"></i></h3>
+                <p id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Feel Free to follow us on our social media handlers, all
+                    the links are given below.</p>
+                    <div class="share">
+                        <a href="https://www.facebook.com/login/" class="fa fa-facebook"></a>
+                        <a href="https://twitter.com/i/flow/login" class="fa fa-twitter"></a>
+                        <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram"></a>
+                        <a href="https://www.linkedin.com/login" class="fa fa-linkedin"></a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <h3>Content Info </h3>
+                <a href="" class="links"><i class="fa fa-phone"></i> +91 980-763-4217</a>
+                <a href="" class="links"><i class="fa fa-phone"></i> +111 420-763-4777</a>
+                <a href="" class="links"><i class="fa fa-envelope"></i> deva31@gmail.com</a>
+                <a href="" class="links"><i class="fa fa-map-marker"></i> Hyderabad, India-506164</a>
+            </div>
+
+
+            <div class="box">
+                <h3>Quick Links </h3>
+                <a href="" class="links"><i class="fa fa-arrow-right"></i> Home</a>
+                <a href="" class="links"><i class="fa fa-arrow-right"></i> Features</a>
+                <a href="" class="links"><i class="fa fa-arrow-right"></i> Products</a>
+                <a href="" class="links"><i class="fa fa-arrow-right"></i> Categories</a>
+                <a href="" class="links"><i class="fa fa-arrow-right"></i> Review</a>
+                <a href="" class="links"><i class="fa fa-arrow-right"></i> Blogs</a>
+            </div>
+
+
+            <div class="box">
+                <h3>Newsletter </h3>
+                <p>Subscribe for latest updates</p>
+                <input type="email" placeholder="Your Email" class="email">
+                <input type="submit" value="Subscribe" class="btn">
+            </div>
+        </div>
+
+        <div class="credit">Created by <span>ASHOK THATIKANTI</span> | All Rights Reserved"</div>
+        <button class="btn" onclick="myFunction()">Switch mode</button>
+    </section>
+    <!-- footer section -->
+
+
+<script src="static/js/script.js"></script>
+<script>
+    function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</body>
+</html>
+{% block content %}
+{% endblock %}

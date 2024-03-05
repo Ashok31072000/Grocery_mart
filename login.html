@@ -1,0 +1,32 @@
+{% extends "nav.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body style='background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");'>
+    <u><h2 style="text-align: center; color: darkblue;margin-top:180px;"><strong>LOGIN FOR GROCERY-MART HERE...</strong></h2></u>
+    <div class="container" style="border: 2px solid black;width: 550px;height: 300px;align-self: center;background-color: #fff; border-radius: 20px;margin-top:80px;">
+        {{msg}}
+        <form method="post" action="login">
+            {% csrf_token %}
+            <!-- your existing form fields -->
+            <label>Enter Email Address :</label><br>
+                <input type="email" class="form-control" name="email" placeholder="Registered email id" style="width: 500px;"><br>
+                <label>Enter Password :</label><br>
+                <input type="password" class="form-control" name="psw" placeholder="password" style="width: 500px;"><br>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+        <h4>Existing user <a href="signup">Register...</a></h4>
+    </div>
+
+</body>
+</html>
+{% endblock %}
